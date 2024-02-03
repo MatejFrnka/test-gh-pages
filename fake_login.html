@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js"></script>
+</head>
+<body>
+
+<!--</form>-->
+<a href="javascript:reloadFrame()">reload iframe</a>
+<p>login new window</p>
+<form action="https://sso.online.tableau.com/public/prelogin/sendPassword" method="post" target="print_popup"
+      onsubmit="login()">
+
+    <input type="text" name="email" value="etzrrhdhnneixbdoyy@cazlp.com">
+    <input type="text" name="password" value="">
+    <input type="submit">
+
+</form>
+
+<script>
+  async function login() {
+    let w = window.open('about:blank', 'print_popup', 'width=1000,height=800');
+    console.log('a')
+    await new Promise(resolve => setTimeout(resolve, 5000))
+    console.log('b')
+    w.close()
+    reloadFrame();
+    Cookies.get()
+
+  }
+
+  function reloadFrame() {
+    document.getElementById('tableau-viz').src = document.getElementById('tableau-viz').src
+  }
+</script>
+
+<p>====================</p>
+
+<iframe id="subframe" name="sub">
+
+</iframe>
+
+<p>===============</p>
+
+<script type='module'
+        src='https://eu-west-1a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'></script>
+<tableau-viz id='tableau-viz'
+             src='https://eu-west-1a.online.tableau.com/t/cazlp/views/EmailPerformancebyCampaign/EmailPerformancebyCampaign'
+             width='1920' height='871' hide-tabs toolbar='bottom'></tableau-viz>
+
+</body>
+</html>
