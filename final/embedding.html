@@ -34,10 +34,12 @@
                 height: 100%;
                 margin: 0;
             }
+
             #embedding-clipper {
                 height: 100%;
                 overflow-y: hidden;
             }
+
             #embedding-wrapper {
                 height: calc(100% + 30px);
             }
@@ -46,19 +48,23 @@
 <body>
 <div id="embedding-clipper">
     <div id="embedding-wrapper">
-        <!--        <script type='module'-->
-        <!--                src='https://prod-uk-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'></script>-->
-        <!--        <tableau-viz id='tableau-viz'-->
-        <!--                     src='https://prod-uk-a.online.tableau.com/t/tjncqsrmlijaxecler12733730ac/views/EmailPerformancebyCampaign/EmailPerformancebyCampaign'-->
-        <!--                     hide-tabs>-->
-        <!--        </tableau-viz>-->
         <script type='module'
                 src='https://prod-uk-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'></script>
         <tableau-viz id='tableau-viz'
-                     src='https://prod-uk-a.online.tableau.com/t/tjncqsrmlijaxecler12733730ac/views/EmailPerformancebyCampaign/EmailPerformancebyCampaign'
                      hide-tabs>
         </tableau-viz>
     </div>
 </div>
+<script>
+  const user = new URLSearchParams(window.location.search).get('user');
+  const site_view_url = 'https://prod-uk-a.online.tableau.com/t/tjncqsrmlijaxecler12733730ac/views/';
+  const user_view = user.replace(/@/g, '').replace(/\./g, '_');
+  const users_view_url = site_view_url + user_view + '/' + user_view;
+
+  console.log(users_view_url);
+
+  // Set the src attribute of tableau-viz element
+  document.getElementById('tableau-viz').setAttribute('src', users_view_url);
+</script>
 </body>
 </html>
