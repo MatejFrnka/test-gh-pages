@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <title>App | O2 Geodata</title>
+        <meta name="description"
+              content="Analytický nástroj, založený na datech mobilního operátora, který poskytuje strukturované výstupy v podobě statistik a popisuje chování davů z pohledu výskytu v definované geografické lokalitě a vztahu mezi více lokalitami.">
+        <meta name="keywords" content="chování, lokalitami, data">
+        <meta name="author" content="inCUBE interactive">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="follow,index">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="theme-color" content="#000066">
+
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="O2 Geodata">
+        <meta property="og:description"
+              content="Analytický nástroj, založený na datech mobilního operátora, který poskytuje strukturované výstupy v podobě statistik a popisuje chování davů z pohledu výskytu v definované geografické lokalitě a vztahu mezi více lokalitami.">
+        <meta property="og:url" content="https://o2geodata.cz/page/home">
+        <meta property="og:image" content="/assets/images/og-image.jpeg">
+        <link rel="previewimage" href="/assets/images/og-image.jpeg">
+        <link rel="image_src" href="/assets/images/og-image.jpeg">
+        <style>
+            body, html {
+                height: 100%;
+                margin: 0;
+            }
+            #embedding-clipper {
+                height: 100%;
+                overflow-y: hidden;
+            }
+            #embedding-wrapper {
+                height: calc(100% + 30px);
+            }
+        </style>
+    </head>
+<body>
+<div id="embedding-clipper">
+    <div id="embedding-wrapper">
+<!--        <script type='module'-->
+<!--                src='https://prod-uk-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'></script>-->
+<!--        <tableau-viz id='tableau-viz'-->
+<!--                     src='https://prod-uk-a.online.tableau.com/t/tjncqsrmlijaxecler12733730ac/views/EmailPerformancebyCampaign/EmailPerformancebyCampaign'-->
+<!--                     hide-tabs>-->
+<!--        </tableau-viz>-->
+        <script type='module'
+                src='https://prod-uk-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'></script>
+        <tableau-viz id='tableau-viz'
+                     src='https://prod-uk-a.online.tableau.com/t/tjncqsrmlijaxecler12733730ac/views/wrapper2/Dashboard1'
+                     hide-tabs>
+        </tableau-viz>
+    </div>
+</div>
+</body>
+</html>
