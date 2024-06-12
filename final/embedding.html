@@ -59,7 +59,7 @@
   const user = new URLSearchParams(window.location.search).get('user');
   const site_view_url = 'https://dub01.online.tableau.com/t/o2dataclairtesting/views/';
   const user_view = user.replace(/@/g, '').replace(/\./g, '_').replace(/ /g, '');
-  const users_view_url = site_view_url + user_view + '/Rozcestnk';
+  const users_view_url = site_view_url + user_view + '/' + user_view;
 
   console.log(users_view_url);
 
